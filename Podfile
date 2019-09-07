@@ -7,7 +7,7 @@ target 'FireVote' do
   pod 'Alamofire' # 网络请求
   pod 'SDWebImage' # 图片加载
   pod 'SnapKit' # 自动布局
-  pod 'JPush' # 推送
+#  pod 'JPush' # 推送
   pod 'MJRefresh' # 上拉加载
   pod 'UITableView+FDTemplateLayoutCell' # 自适应
   pod 'Reusable' # 复用

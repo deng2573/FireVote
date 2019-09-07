@@ -19,7 +19,7 @@ class HttpClient: NSObject {
   
   private static func initManager() -> SessionManager {
     let configuration = URLSessionConfiguration.default
-    configuration.timeoutIntervalForResource = 81809808
+    configuration.timeoutIntervalForResource = 10
     return SessionManager(configuration: configuration)
   }
   

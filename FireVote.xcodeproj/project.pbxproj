@@ -125,6 +125,8 @@
 		B47A7DBC231E4825006DDF39 /* AssetPickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetPickerCell.swift; sourceTree = "<group>"; };
 		B4F87961231F62DB002B05FF /* VoteListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoteListCell.swift; sourceTree = "<group>"; };
 		B4F87965231FA723002B05FF /* VoteDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteDetailsViewController.swift; sourceTree = "<group>"; };
+		B4F8796723224D43002B05FF /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
+		B4F8796823224D43002B05FF /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		C091CE373630B1C7512B647D /* Pods-FireVote.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireVote.release.xcconfig"; path = "Target Support Files/Pods-FireVote/Pods-FireVote.release.xcconfig"; sourceTree = "<group>"; };
 		E4E6874878EC98110BF0232E /* Pods-FireVote.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireVote.debug.xcconfig"; path = "Target Support Files/Pods-FireVote/Pods-FireVote.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -373,6 +375,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = B47A5070231E139A00C059C7;
 			productRefGroup = B47A507A231E139A00C059C7 /* Products */;
@@ -505,6 +508,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				B47A5081231E139A00C059C7 /* Base */,
+				B4F8796723224D43002B05FF /* es */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -513,6 +517,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				B47A5086231E139B00C059C7 /* Base */,
+				B4F8796823224D43002B05FF /* es */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -571,7 +576,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -626,7 +631,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -643,7 +648,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8PB3C9ADKV;
+				DEVELOPMENT_TEAM = 7LK2FWM3S2;
 				INFOPLIST_FILE = FireVote/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -665,7 +670,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8PB3C9ADKV;
+				DEVELOPMENT_TEAM = 7LK2FWM3S2;
 				INFOPLIST_FILE = FireVote/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = (

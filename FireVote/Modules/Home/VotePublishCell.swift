@@ -18,10 +18,10 @@ class VotePublishTitleCell: UITableViewCell {
     willSet {
       if newValue {
         textLimit = 800
-        placeholderLable.text = "请输入投票说明（800字以内）"
+        placeholderLable.text = "Ingrese una descripción de votación "
       } else {
         textLimit = 32
-        placeholderLable.text = "标题(32字以内)"
+        placeholderLable.text = "Título (dentro de 32 palabras)"
       }
     }
   }
@@ -135,9 +135,9 @@ class VotePublishOptionsCell: UITableViewCell {
   
   private lazy var placeholderLable: UILabel = {
     let label = UILabel()
-    label.text = "请输入选项内容"
+    label.text = "Por favor ingrese el contenido de la opción"
     label.textColor = #colorLiteral(red: 0.6, green: 0.6, blue: 0.6, alpha: 1)
-    label.font =  UIFont.systemFont(ofSize: 14)
+    label.font =  UIFont.systemFont(ofSize: 13)
     return label
   }()
   
@@ -265,7 +265,7 @@ class VoteAddOptionCell: UITableViewCell {
   
   private lazy var titleLable: UILabel = {
     let label = UILabel()
-    label.text = "添加选项"
+    label.text = "Agregar opción"
     label.textColor = #colorLiteral(red: 0.6, green: 0.6, blue: 0.6, alpha: 1)
     label.font =  UIFont.systemFont(ofSize: 14)
     return label
@@ -273,9 +273,9 @@ class VoteAddOptionCell: UITableViewCell {
   
   private lazy var tipsLable: UILabel = {
     let label = UILabel()
-    label.text = "选项不设上限，每个选项不超过200个字"
+    label.text = "No hay límite para esta opción."
     label.textColor = #colorLiteral(red: 0.6, green: 0.6, blue: 0.6, alpha: 1)
-    label.font =  UIFont.systemFont(ofSize: 12)
+    label.font =  UIFont.systemFont(ofSize: 10)
     return label
   }()
   
@@ -360,7 +360,7 @@ class VotePickerCell: UITableViewCell {
   
   private lazy var valueLable: UILabel = {
     let label = UILabel()
-    label.text = "请选择"
+    label.text = "Por favor elija"
     label.textColor = #colorLiteral(red: 0.6, green: 0.6, blue: 0.6, alpha: 1)
     label.textAlignment = .right
     label.font = UIFont.systemFont(ofSize: 14)
@@ -391,7 +391,7 @@ class VotePickerCell: UITableViewCell {
   
   private lazy var tipsLable: UILabel = {
     let label = UILabel()
-    label.text = "设置和主题相关的封面，可以吸引更多人参与投票"
+    label.text = "Establecer una portada relacionada con el tema"
     label.textColor = #colorLiteral(red: 0.6, green: 0.6, blue: 0.6, alpha: 1)
     label.textAlignment = .left
     label.font = UIFont.systemFont(ofSize: 12)
@@ -439,7 +439,7 @@ class VotePickerCell: UITableViewCell {
     
     contentView.addSubview(coverView)
     coverView.snp.makeConstraints({ (make) in
-      make.left.equalTo(85)
+      make.left.equalTo(180)
       make.centerY.equalTo(titleLable)
       make.size.equalTo(CGSize(width: 120, height: 68))
     })
@@ -475,32 +475,32 @@ class VotePickerCell: UITableViewCell {
     
     switch type {
       case .type:
-        title = "投票类型"
-        value = info.type == 0 ? "多选" : "单选"
+        title = "Tipo de votación"
+        value = info.type == 0 ? "Selección múltiple" : "Radio"
       case .min:
-        title = "最少选择项数"
-        value = info.leastOptionNumber == 0 ? "不限" : "\(info.leastOptionNumber)"
+        title = "Cantidad mínima de opciones"
+        value = info.leastOptionNumber == 0 ? "Ilimitado" : "\(info.leastOptionNumber)"
       case .max:
-        title = "最多选择项数"
-        value = info.mostOptionNumber == 0 ? "不限" : "\(info.mostOptionNumber)"
+        title = "Número máximo de opciones."
+        value = info.mostOptionNumber == 0 ? "Ilimitado" : "\(info.mostOptionNumber)"
       case .time:
-        title = "结束时间"
-        value = info.endTime.isEmpty ? "未选择" : info.endTime
+        title = "Hora final"
+        value = info.endTime.isEmpty ? "No seleccionado" : info.endTime
       case .number:
-        title = "投票次数"
-        value = info.times == 1 ? "每人仅一次" : "每人每天一次"
+        title = "Numero de votos"
+        value = info.times == 1 ? "Solo una vez por persona" : "Solo una vez por persona"
       case .member:
-        title = "发布对象"
+        title = ""
         value = info.number == 0 ? "未选择" : "\(info.number)人"
       case .cover:
-        title = "封面设置"
+        title = "Ajuste de la cubierta"
         if let image = info.coverImage {
           coverView.image = image
         } else {
           coverView.image = #imageLiteral(resourceName: "cover_add")
         }
       }
-    valueLable.textColor = value == "未选择" ? #colorLiteral(red: 0.6, green: 0.6, blue: 0.6, alpha: 1) : #colorLiteral(red: 0.4, green: 0.4, blue: 0.4, alpha: 1)
+    valueLable.textColor = value == "No seleccionado" ? #colorLiteral(red: 0.6, green: 0.6, blue: 0.6, alpha: 1) : #colorLiteral(red: 0.4, green: 0.4, blue: 0.4, alpha: 1)
     titleLable.text = title
     valueLable.text = value
     coverView.isHidden = type != .cover
@@ -531,7 +531,7 @@ class VotePickerCell: UITableViewCell {
     dialogViewController.tableView!.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     dialogViewController.dialogViewMargins = UIEdgeInsets(top: -100, left: 52, bottom: 0, right: 52)
     dialogViewController.headerViewHeight = 0
-    dialogViewController.items = type == .type ? ["单选", "多选"] : ["每人仅一次", "每人每天一次"]
+    dialogViewController.items = type == .type ? ["Radio", "Selección múltiple"] : ["Solo una vez por persona", "Una vez por persona por dia"]
     dialogViewController.heightForItemBlock = { vc, index in
       return 62
     }
@@ -564,6 +564,7 @@ class VotePickerCell: UITableViewCell {
       imagePickerViewController?.allowPickingMultipleVideo = false
       imagePickerViewController?.allowPickingOriginalPhoto = true
       imagePickerViewController?.allowCrop = true
+      imagePickerViewController?.preferredLanguage = "en"
       let w = screenWidth - 2 * 10
       let h = w / 120 * 68
       imagePickerViewController?.cropRect = CGRect(x: 10, y: (screenHeight - h) / 2, width: w, height: h)      

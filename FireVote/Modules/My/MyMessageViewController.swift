@@ -12,7 +12,7 @@ class MyMessageViewController: ViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    title = "我的信息"
+    title = "Mi informacion"
     showEmptyPrompt(show: true)
   }
 }

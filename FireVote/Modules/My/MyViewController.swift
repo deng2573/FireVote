@@ -41,7 +41,7 @@ class MyViewController: ViewController {
   }
   
   private func setupView() {
-    title = "我的"
+    title = "Mi"
     view.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
     view.addSubview(headerBackgroundView)
     headerBackgroundView.snp.makeConstraints { (make) in
@@ -60,13 +60,13 @@ class MyViewController: ViewController {
         StaticTableViewCell(cellType: MyHeaderTableViewCell.self, didSelectPushTo: UpdateUserInfoViewController()),
       ],
       [
-        StaticTableViewCell(cellType: MyNormalTableViewCell.self, title: "我的信息", icon: UIImage(), didSelectPushTo: MyMessageViewController()),
+        StaticTableViewCell(cellType: MyNormalTableViewCell.self, title: "Mi informacion", icon: UIImage(), didSelectPushTo: MyMessageViewController()),
       ],
       [
-        StaticTableViewCell(cellType: MyNormalTableViewCell.self, title: "反馈与帮助", icon: UIImage(), didSelectPushTo: FeedbackViewController()),
+        StaticTableViewCell(cellType: MyNormalTableViewCell.self, title: "Comentarios y ayuda", icon: UIImage(), didSelectPushTo: FeedbackViewController()),
       ],
       [
-        StaticTableViewCell(cellType: MyNormalTableViewCell.self, title: "设置", icon: UIImage(), didSelectPushTo: MySettingViewController()),
+        StaticTableViewCell(cellType: MyNormalTableViewCell.self, title: "Ambientación", icon: UIImage(), didSelectPushTo: MySettingViewController()),
       ],
     ]
     tableView.reloadData()

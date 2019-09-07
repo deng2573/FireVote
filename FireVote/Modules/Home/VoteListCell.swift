@@ -81,12 +81,31 @@ class VoteListCell: UITableViewCell {
     let btn = UIButton()
     btn.backgroundColor = #colorLiteral(red: 0.07843137255, green: 0.6196078431, blue: 1, alpha: 1)
     btn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
-    btn.setTitle("立即投票", for: .normal)
+    btn.setTitle("Ir a votar", for: .normal)
     btn.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
     btn.layer.cornerRadius = 8
     btn.layer.masksToBounds = true
     btn.isUserInteractionEnabled = false
     return btn
+  }()
+  
+  private lazy var reportButton: UIButton = {
+    let button = UIButton(type: .custom)
+    button.layer.masksToBounds = true
+    button.tap(action: { _ in
+      let alert = UIAlertController(title: "¿Desea informar y ocultar esta información?", message: "", preferredStyle: .alert)
+      let cancel = UIAlertAction(title: "Cancelar", style: .cancel) { (alert) in
+        
+      }
+      let confirm = UIAlertAction(title: "Determinar", style: .default) { (alert) in
+        HUD.show(text: "Gracias por sus comentarios, lo trataremos lo antes posible.")
+      }
+      alert.addAction(cancel)
+      alert.addAction(confirm)
+      VCManager.currentViewController.present(alert, animated: true, completion: nil)
+    })
+    button.setImage(#imageLiteral(resourceName: "report"), for: .normal)
+    return button
   }()
   
   required init?(coder aDecoder: NSCoder) {
@@ -153,6 +172,13 @@ class VoteListCell: UITableViewCell {
       make.right.equalTo(-40)
       make.height.equalTo(48)
       make.bottom.equalTo(-25)
+    }
+    
+    contentView.addSubview(reportButton)
+    reportButton.snp.makeConstraints { (make) in
+      make.centerY.equalTo(avatarImageView)
+      make.right.equalTo(-10)
+      make.size.equalTo(CGSize(width: 50, height: 50))
     }
   }
   

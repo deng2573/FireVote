@@ -51,7 +51,7 @@ class AboutAppViewController: ViewController {
   }
   
   private func setupView() {
-    title = "关于"
+    title = "Acerca de"
     view.addSubview(logoImageView)
     logoImageView.snp.makeConstraints({ (make) in
       make.top.equalTo(10)

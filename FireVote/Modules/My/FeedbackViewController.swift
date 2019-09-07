@@ -29,12 +29,12 @@ class FeedbackViewController: ViewController {
     button.layer.cornerRadius = 22
     button.backgroundColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
     button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
-    button.setTitle("提交", for: .normal)
+    button.setTitle("Enviar", for: .normal)
     button.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
     button.tap(action: { _ in
       HUD.loading()
       DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-        HUD.show(text: "谢谢你的反馈")
+        HUD.show(text: "Gracias por tus comentarios.")
         self.navigationController?.popViewController(animated: true)
       }
     })
@@ -47,7 +47,7 @@ class FeedbackViewController: ViewController {
   }
   
   private func setupView() {
-    title = "反馈与帮助"
+    title = "Comentarios y ayuda"
     view.addSubview(textView)
     textView.snp.makeConstraints({ (make) in
       make.top.equalTo(10)

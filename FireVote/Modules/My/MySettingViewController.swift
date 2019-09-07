@@ -29,7 +29,7 @@ class MySettingViewController: ViewController {
   }
   
   private func setUpView() {
-    title = "设置"
+    title = "Borrar caché"
     view.addSubview(tableView)
     tableView.snp.makeConstraints { (make) in
       make.edges.equalToSuperview()
@@ -39,7 +39,7 @@ class MySettingViewController: ViewController {
   private func loadCellData() {
     cellList = [
       [
-        StaticTableViewCell(cellType: MyNormalTableViewCell.self, title: "清除缓存", icon: UIImage(), didSelectPushTo: ViewController()),
+        StaticTableViewCell(cellType: MyNormalTableViewCell.self, title: "Borrar caché", icon: UIImage(), didSelectPushTo: ViewController()),
       ]
     ]
     tableView.reloadData()
@@ -76,7 +76,7 @@ extension MySettingViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     HUD.loading()
     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-      HUD.show(text: "清除成功")
+      HUD.show(text: "Borrado con éxito")
     }
   }
   

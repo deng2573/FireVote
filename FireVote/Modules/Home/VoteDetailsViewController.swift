@@ -23,14 +23,14 @@ class VoteDetailsViewController: ViewController {
   
   private lazy var publishButton: UIButton = {
     let button = UIButton(type: .custom)
-    button.setTitle("投票", for: .normal)
+    button.setTitle("Votar", for: .normal)
     button.backgroundColor = #colorLiteral(red: 0.07843137255, green: 0.6196078431, blue: 1, alpha: 1)
     button.layer.cornerRadius = 6
     button.titleLabel?.font = UIFont.systemFont(ofSize: 14)
     button.tap(action: { _ in
       HUD.loading()
       DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-        HUD.show(text: "谢谢你的投票")
+        HUD.show(text: "Gracias por tu voto.")
       }
     })
     return button
@@ -44,7 +44,7 @@ class VoteDetailsViewController: ViewController {
   }
   
   private func setupView() {
-    title = "投票详情"
+    title = "Detalles de votación"
     view.addSubview(tableView)
     tableView.snp.makeConstraints { (make) in
       make.edges.equalToSuperview()

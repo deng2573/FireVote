@@ -38,7 +38,7 @@ class UpdateUserInfoViewController: ViewController {
   
   private lazy var tipsLable: UILabel = {
     let label = UILabel()
-    label.text = "点击修改头像"
+    label.text = "Haga clic para modificar avatar"
     label.textColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
     label.font = UIFont.boldSystemFont(ofSize: 12)
     return label
@@ -58,7 +58,7 @@ class UpdateUserInfoViewController: ViewController {
       .foregroundColor: #colorLiteral(red: 0.662745098, green: 0.6431372549, blue: 0.7058823529, alpha: 1),
       .font : textField.font!
     ]
-    textField.attributedPlaceholder = NSAttributedString(string: "输入", attributes: attributes)
+    textField.attributedPlaceholder = NSAttributedString(string: "De entrada", attributes: attributes)
     return textField
   }()
   
@@ -68,7 +68,7 @@ class UpdateUserInfoViewController: ViewController {
     button.layer.cornerRadius = 22
     button.backgroundColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
     button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
-    button.setTitle("保存", for: .normal)
+    button.setTitle("Guardar", for: .normal)
     button.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
     button.tap(action: { _ in
       self.gotoModify()
@@ -82,7 +82,7 @@ class UpdateUserInfoViewController: ViewController {
   }
   
   private func setupView() {
-    title = "个人信息"
+    title = "Información personal"
     view.addSubview(backgroundView)
     
     backgroundView.snp.makeConstraints({ (make) in
@@ -136,7 +136,7 @@ class UpdateUserInfoViewController: ViewController {
     imgPicker?.allowCrop = true
     imgPicker?.needCircleCrop = false
     imgPicker?.needShowStatusBar = true
-    
+    imgPicker?.preferredLanguage = "en"
     imgPicker?.didFinishPickingPhotosHandle = { photos, assets, isSelectOriginalPhoto in
       self.avatarImage = photos?.first
       if let image = self.avatarImage {
@@ -148,7 +148,7 @@ class UpdateUserInfoViewController: ViewController {
   
   private func gotoModify() {
     if name.isEmpty {
-      HUD.show(text: "保存成功")
+      HUD.show(text: "Guardado exitosamente")
       return
     }
     

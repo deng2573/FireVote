@@ -35,7 +35,7 @@ extension UIViewController {
     dismiss(animated: true, completion: nil)
   }
   
-  func showEmptyPrompt(show: Bool, prompt: String = "暂无数据", topOffset: CGFloat = 0) {
+  func showEmptyPrompt(show: Bool, prompt: String = "Aún no hay datos", topOffset: CGFloat = 0) {
     var emptyView = view.viewWithTag(9990)
     
     if !show {

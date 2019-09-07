@@ -97,7 +97,7 @@ class AssetPickerView: UIView {
     imagePickerViewController?.allowPickingOriginalPhoto = true
     imagePickerViewController?.allowPickingMultipleVideo = true
     imagePickerViewController?.showSelectBtn = false
-    
+    imagePickerViewController?.preferredLanguage = "en"
     imagePickerViewController?.didFinishPickingPhotosHandle = { (photos, assets, isSelect) in
       self.didFinishPicking(assets: NSMutableArray(array: assets!) as! [PHAsset])
     }

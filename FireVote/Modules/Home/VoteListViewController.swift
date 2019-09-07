@@ -31,7 +31,7 @@ class VoteListViewController: ViewController {
   }
   
   private func setupView() {
-    title = "投票"
+    title = "Votar"
     view.addSubview(tableView)
     tableView.snp.makeConstraints { (make) in
       make.edges.equalToSuperview()

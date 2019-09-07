@@ -29,7 +29,7 @@ class VotePublishViewController: ViewController {
   
   private lazy var publishButton: UIButton = {
     let button = UIButton(type: .custom)
-    button.setTitle("发布", for: .normal)
+    button.setTitle("Lanzamiento", for: .normal)
     button.backgroundColor = #colorLiteral(red: 0.07843137255, green: 0.6196078431, blue: 1, alpha: 1)
     button.layer.cornerRadius = 6
     button.titleLabel?.font = UIFont.systemFont(ofSize: 14)
@@ -59,7 +59,7 @@ class VotePublishViewController: ViewController {
   }
   
   private func setupView() {
-    title = "发布投票"
+    title = "Publicar voto"
     view.backgroundColor = .white
     setUpDefaultBackButtonItem()
     view.addSubview(tableView)
@@ -143,21 +143,21 @@ class VotePublishViewController: ViewController {
   
   private func publishVote() {
     if voteInfo.title.isEmpty {
-      HUD.show(text: "请编辑题目名称")
+      HUD.show(text: "Por favor edite el nombre del título")
       return
     }
     if voteInfo.voteOptions.count < 2 {
-      HUD.show(text: "至少两个选项")
+      HUD.show(text: "Al menos dos opciones")
       return
     }
     for option in voteInfo.voteOptions {
       if option.content.isEmpty {
-        HUD.show(text: "选项内容不能为空")
+        HUD.show(text: "El contenido de la opción no puede estar vacío")
         return
       }
     }
     if voteInfo.coverImage == nil {
-      HUD.show(text: "请选择封面")
+      HUD.show(text: "Por favor seleccione una portada")
       return
     }
     
@@ -185,7 +185,7 @@ class VotePublishViewController: ViewController {
     VoteManager.writeVoteInfo(voteInfo: voteListInfo)
     HUD.loading()
     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-      HUD.show(text: "发布成功")
+      HUD.show(text: "Lanzado exitosamente")
       self.dismiss(animated: true, completion: nil)
     }
   }
@@ -250,11 +250,11 @@ extension VotePublishViewController: UITableViewDataSource {
       }
       cell.deleteAction = {
         self.resignCellInputFirstResponder()
-        let alert = UIAlertController(title: "", message: "确定要删除此选项吗?", preferredStyle: .alert)
-        let cancel = UIAlertAction(title: "取消", style: .cancel) { (alert) in
+        let alert = UIAlertController(title: "¿Estás seguro de que deseas eliminar esta opción?", message: "", preferredStyle: .alert)
+        let cancel = UIAlertAction(title: "Cancelar", style: .cancel) { (alert) in
           self.tableView.reloadData()
         }
-        let confirm = UIAlertAction(title: "确定", style: .default) { (alert) in
+        let confirm = UIAlertAction(title: "Determinar", style: .default) { (alert) in
           self.voteInfo.voteOptions.remove(at: indexPath.row)
           self.reloadTableView()
         }

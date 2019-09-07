@@ -55,7 +55,7 @@ class MyHeaderTableViewCell: UITableViewCell {
   
   private lazy var moreLable: UILabel = {
     let label = UILabel()
-    label.text = "更多信息"
+    label.text = "Más información"
     label.textColor = #colorLiteral(red: 0.6, green: 0.6, blue: 0.6, alpha: 1)
     label.font =  UIFont.systemFont(ofSize: 13)
     return label
@@ -122,7 +122,7 @@ class MyHeaderTableViewCell: UITableViewCell {
   
   func update() {
     if let userInfo = UserInfoManager.readUserInfo() {
-      nameLable.text = userInfo.nickName.isEmpty ? "未设置" : userInfo.nickName
+      nameLable.text = userInfo.nickName.isEmpty ? "No establecido" : userInfo.nickName
       if !userInfo.avatar.isEmpty, let avatarData = Data(base64Encoded: userInfo.avatar) {
         avatarImageView.image = UIImage(data: avatarData)
       }
