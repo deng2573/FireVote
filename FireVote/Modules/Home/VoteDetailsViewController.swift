@@ -28,15 +28,23 @@ class VoteDetailsViewController: ViewController {
     button.layer.cornerRadius = 6
     button.titleLabel?.font = UIFont.systemFont(ofSize: 14)
     button.tap(action: { _ in
+      if !self.isSelected {
+        HUD.show(text: "Por favor seleccione una opción")
+        return
+      }
+      
       HUD.loading()
       DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
         HUD.show(text: "Gracias por tu voto.")
+        self.navigationController?.popViewController(animated: true)
       }
     })
     return button
   }()
   
   var optionList: [VoteOptionItem] = []
+  
+  var isSelected = false
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -88,6 +96,7 @@ extension VoteDetailsViewController: UITableViewDelegate {
       info1.isSelected = false
     }
     info.isSelected = true
+    self.isSelected = true
     tableView.reloadData()
   }
   

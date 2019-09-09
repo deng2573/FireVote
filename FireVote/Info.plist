@@ -19,7 +19,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0.0</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>2</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -28,15 +28,15 @@
 		<true/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>我们希望打开相机来完成用户信息，请允许使用相机</string>
+	<string>Queremos encender la cámara para completar la imagen, permita que la cámara</string>
 	<key>NSLocationUsageDescription</key>
-	<string>允许定位以把位置保存到照片中</string>
+	<string>Permitir segmentación para guardar la ubicación en la foto</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>允许定位以把位置保存到照片中</string>
+	<string>Permitir segmentación para guardar la ubicación en la foto</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>若不允许，您将无法将照片保存到相册</string>
+	<string>Si no lo permite, no podrá guardar sus fotos en un álbum.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>若不允许，您将无法访问相册中的照片</string>
+	<string>Si no lo permite, no podrá acceder a las fotos de su álbum.</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
